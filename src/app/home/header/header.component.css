@@ -1,0 +1,21 @@
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #469898;
+    display: flex;
+    justify-content: center;
+    align-items: center
+
+}
+
+div{
+    width:100%;
+    height: 100%;
+}
+
+svg{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}

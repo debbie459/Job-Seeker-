@@ -1,0 +1,40 @@
+<main>
+    <div class="filter" >
+        <button (click)="getFilteredJobs('all')">All</button>
+
+        <button>
+            <select (change)="getFilteredJobs($event)">
+                @for(language of uniqueLanguages; track language){
+                        <option [value]="language">{{language}}</option>
+                }
+            </select>
+        </button>
+
+
+        <button>
+            <select (change)="getFilteredJobs($event)">
+                @for(role of uniqueRoles; track role){
+                    <option [value]="role">{{role}}</option>
+                }
+            </select>
+        </button>
+
+
+        <button>
+            <select (change)="getFilteredJobs($event)">
+                @for(level of uniqueLevels; track level){
+                    <option [value]="level">{{level}}</option>
+                }
+            </select>
+        </button>
+
+    </div>
+
+
+    @for(job of filteredJobs; track job){
+        <app-job-item [job]="job"></app-job-item>
+    } @empty {
+        <p>We couldn't find any job at ths time</p>
+    }
+    
+</main>    

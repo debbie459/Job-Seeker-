@@ -1,0 +1,42 @@
+<div class="job-item" >
+    <div class="container">
+        <img [src]="job.logo" [alt]="job.company">
+        <div>
+            <div class="company-details">
+                <p class="company-name">{{job.company}}</p>
+                @if(job.new == true){
+                    <p id="new">New</p>
+                }
+
+                @if(job.featured == true){
+                    <p id="featured">Featured</p>
+                }
+                
+            </div>
+
+            <p class="job-position">{{job.position}}</p>
+
+            <div class="minute-details">
+                <p class="time-posted">  {{job.postedAt}}</p>
+                <p class="job-contract">* {{job.contract}}</p>
+                <p class="location">* {{job.location}}</p>
+            </div>
+
+            <hr>
+
+            <div class="job-filters">
+                @for(language of job.languages; track language){
+                    <button>{{language}}</button>
+                }
+                @for(tool of job.tools; track tool){
+                    <button>{{tool}}</button>
+                }
+                <button>{{job.role}}</button>
+                <button>{{job.level}}</button>
+
+            </div>
+        </div>
+    
+    </div>
+    
+</div>
